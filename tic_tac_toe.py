@@ -65,7 +65,7 @@ class MainApp(App):
             self.button[index].disabled = False
 
     def build(self):
-        self.title = "Специально для тебя"
+        self.title = "Специально для тебя, да!"
         
         root = BoxLayout(orientation = "vertical", padding = 5)
 
