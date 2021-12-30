@@ -6,9 +6,9 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.config import Config
 
-Config.set("graphics","resizable","0")
-Config.set("graphics","width","300")
-Config.set("graphics","height","300")
+Config.set("graphics", "resizable", "0")
+Config.set("graphics", "width", "300")
+Config.set("graphics", "height", "400")
 
 choice = ['X', 'O']; switch = 0
 
@@ -24,7 +24,7 @@ class MainApp(App):
         else: switch = 0
 
         coordinate = (
-            (0,1,2),(3,4,5),(6,7,8), # X
+            (0, 1, 2), (3,4,5),(6,7,8), # X
             (0,3,6),(1,4,7),(2,5,8), # Y
             (0,4,8),(2,4,6),         # D
         )
@@ -43,7 +43,7 @@ class MainApp(App):
         )
 
         win = False
-        color = [0,1,0,1] # Green
+        color = [0,1,0,1]  # Green
 
         for index in range(8):
             if vector[index].count('X') == 3\
@@ -69,14 +69,14 @@ class MainApp(App):
         
         root = BoxLayout(orientation = "vertical", padding = 5)
 
-        grid = GridLayout(cols = 3)
+        grid = GridLayout(cols=3)
         self.button = [0 for _ in range(9)]
         for index in range(9):
             self.button[index] = Button(
-                    color = [0,0,0,1],
-                    font_size = 24,
-                    disabled = False,
-                    on_press = self.tic_tac_toe
+                    color=[0, 0, 0, 1],
+                    font_size="50sp",
+                    disabled=False,
+                    on_press=self.tic_tac_toe
                 )
             grid.add_widget(self.button[index])
         root.add_widget(grid)
@@ -84,8 +84,8 @@ class MainApp(App):
         root.add_widget(
             Button(
                 text = "Restart",
-                size_hint = [1,.1],
-                on_press = self.restart
+                size_hint=[1,.1],
+                on_press=self.restart
             )
         )
         return root
