@@ -24,9 +24,9 @@ class MainApp(App):
         else: switch = 0
 
         coordinate = (
-            (0, 1, 2), (3,4,5),(6,7,8), # X
-            (0,3,6),(1,4,7),(2,5,8), # Y
-            (0,4,8),(2,4,6),         # D
+            (0, 1, 2), (3, 4, 5), (6, 7, 8), # X
+            (0, 3, 6), (1, 4, 7), (2, 5, 8), # Y
+            (0, 4, 8), (2, 4, 6),         # D
         )
 
         vector = (
@@ -43,7 +43,7 @@ class MainApp(App):
         )
 
         win = False
-        color = [0,1,0,1]  # Green
+        color = [0, 1, 0, 1]  # Green
 
         for index in range(8):
             if vector[index].count('X') == 3\
@@ -60,7 +60,7 @@ class MainApp(App):
     def restart(self, arg):
         global switch; switch = 0
         for index in range(9):
-            self.button[index].color = [0,0,0,1]
+            self.button[index].color = [0,1,0,1]
             self.button[index].text = ""
             self.button[index].disabled = False
 
@@ -73,8 +73,8 @@ class MainApp(App):
         self.button = [0 for _ in range(9)]
         for index in range(9):
             self.button[index] = Button(
-                    color=[0, 0, 0, 1],
-                    font_size="50sp",
+                    color=[1, 1, 1, 1],
+                    font_size="70sp",
                     disabled=False,
                     on_press=self.tic_tac_toe
                 )
@@ -84,7 +84,7 @@ class MainApp(App):
         root.add_widget(
             Button(
                 text = "Restart",
-                size_hint=[1,.1],
+                size_hint=[1, .1],
                 on_press=self.restart
             )
         )
