@@ -16,9 +16,9 @@ class MainApp(App):
 
     def tic_tac_toe(self, arg):
         global switch
-
         arg.disabled = True
         arg.text = choice[switch]
+        self.button.color = [1, 0, 0, 1]
 
         if not switch: switch = 1
         else: switch = 0
@@ -30,6 +30,7 @@ class MainApp(App):
         )
 
         vector = (
+
             [self.button[x].text for x in (0,1,2)],
             [self.button[x].text for x in (3,4,5)],
             [self.button[x].text for x in (6,7,8)],
@@ -43,14 +44,15 @@ class MainApp(App):
         )
 
         win = False
-        color = [0, 1, 0, 1]  # Green
+      #  color = [0, 1, 0, 1]
+        # Green
 
         for index in range(8):
             if vector[index].count('X') == 3\
             or vector[index].count('O') == 3:
                 win = True
                 for i in coordinate[index]:
-                    self.button[i].color = color
+                    self.button[i].color = [0, 1, 0, 1]
                 break
 
         if win:
