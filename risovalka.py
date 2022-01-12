@@ -10,7 +10,14 @@ class PainterWidget(Widget):
 
     def on_touch_down(self, touch):
         with self.canvas:
-            Color(random(), random(), random(), 1)
+            x = round(random(), 2)
+            y = round(random(), 2)
+            z = round(random(), 2)
+
+            print(x, y, z)
+            Color(x, y, z, 1)
+            # Color(1, 0, 1, 1)
+
             rad = 20
             Ellipse(pos=(touch.x - rad / 2, touch.y - rad / 2), size=(rad, rad))
             touch.ud['Line'] = Line(points=(touch.x, touch.y), width=10)
