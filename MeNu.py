@@ -12,16 +12,28 @@ KV = '''
         MDList:
 
             OneLineListItem:
-                text: "Screen 1"
+                text: "Страница 1"
                 on_press:
                     root.nav_drawer.set_state("close")
                     root.screen_manager.current = "scr 1"
 
             OneLineListItem:
-                text: "Screen 2"
+                text: "Страница 2"
                 on_press:
                     root.nav_drawer.set_state("close")
                     root.screen_manager.current = "scr 2"
+        
+            OneLineListItem:
+                text: "Страница 3"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 3"
+                    
+            OneLineListItem:
+                text: "Страница 4"
+                on_press:
+                    root.nav_drawer.set_state("close")
+                    root.screen_manager.current = "scr 4"
 
 
 MDScreen:
@@ -30,7 +42,7 @@ MDScreen:
         id: toolbar
         pos_hint: {"top": 1}
         elevation: 10
-        title: "MDNavigationDrawer"
+        title: "Это приложение, мать его!"
         left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
 
     MDNavigationLayout:
@@ -43,15 +55,38 @@ MDScreen:
                 name: "scr 1"
 
                 MDLabel:
-                    text: "Screen 1"
-                    halign: "center"
+                    
+                    text: "Вместе весело шагать по просторам"
+                    # halign: "center"
+                    pos: "30dp", "210dp"
+                    font_size: "40dp"
+                    color: [0, 0, 1, 1]
+                    
 
             MDScreen:
                 name: "scr 2"
+                
+                MDLabel:
+                    text: "Я люблю тебя жизнь и надеюсь это взаимно"
+                    pos: "100dp", "210dp"
+                    color: [1, 0, 0, 1]
+                    font_size: "30dp"
+                    
+            MDScreen:
+                name: "scr 3"
 
                 MDLabel:
-                    text: "Screen 2"
-                    halign: "center"
+                    text: "Следующая станция метро - 'Пролетарская'"
+                    pos: "30dp", "210dp"
+                    font_size: "20dp"
+        
+            MDScreen:
+                name: "scr 4"
+
+                MDLabel:
+                    text: "У матросов нет вопросов"
+                    pos: "30dp", "210dp"
+                    
 
         MDNavigationDrawer:
             id: nav_drawer

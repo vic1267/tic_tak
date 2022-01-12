@@ -15,7 +15,7 @@ class Test(MDApp):
 MDScreen:
 
     MDBottomNavigation:
-        panel_color: get_color_from_hex("#eeeaea")
+        panel_color: get_color_from_hex("FF00AE")
         selected_color_background: get_color_from_hex("#97ecf8")
         text_color_active: 0, 0, 0, 1
 
@@ -24,10 +24,12 @@ MDScreen:
             text: 'Mail'
             icon: 'gmail'
             badge_icon: "numeric-10"
+          
 
             MDLabel:
                 text: 'Mail'
                 halign: 'center'
+                color: ("28FF33")
 
         MDBottomNavigationItem:
             name: 'screen 2'
