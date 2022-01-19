@@ -28,8 +28,10 @@ MDScreen:
 
             MDLabel:
                 text: 'Mail'
-                halign: 'center'
-                color: ("28FF33")
+                
+                color: 1, 0, 0, 1
+                font_size: 33
+                pos: 20, 240
 
         MDBottomNavigationItem:
             name: 'screen 2'

@@ -56,9 +56,10 @@ MDScreen:
 
                 MDLabel:
                     
-                    text: "Вместе весело шагать по просторам"
-                    # halign: "center"
-                    pos: "30dp", "210dp"
+                    text: "В этом мире все прекрасно" 
+                    halign: "center"
+                    #pos: "30dp", "210dp"
+                    
                     font_size: "40dp"
                     color: [0, 0, 1, 1]
                     
@@ -78,7 +79,8 @@ MDScreen:
                 MDLabel:
                     text: "Следующая станция метро - 'Пролетарская'"
                     pos: "30dp", "210dp"
-                    font_size: "20dp"
+                    font_size: "25dp"
+                    color: [0, 1, 0, 1]
         
             MDScreen:
                 name: "scr 4"
@@ -86,6 +88,7 @@ MDScreen:
                 MDLabel:
                     text: "У матросов нет вопросов"
                     pos: "30dp", "210dp"
+                    font_size: "30dp"
                     
 
         MDNavigationDrawer:
@@ -102,9 +105,9 @@ class ContentNavigationDrawer(MDBoxLayout):
     nav_drawer = ObjectProperty()
 
 
-class TestNavigationDrawer(MDApp):
+class Жизнь_это_проза(MDApp):
     def build(self):
         return Builder.load_string(KV)
 
 
-TestNavigationDrawer().run()
+Жизнь_это_проза().run()

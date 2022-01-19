@@ -10,9 +10,9 @@ class PainterWidget(Widget):
 
     def on_touch_down(self, touch):
         with self.canvas:
-            x = round(random(), 2)
-            y = round(random(), 2)
-            z = round(random(), 2)
+            x = round(random(), 1)
+            y = round(random(), 1)
+            z = round(random(), 1)
 
             print(x, y, z)
             Color(x, y, z, 1)
@@ -31,22 +31,22 @@ class PainApp(App):
         parent = Widget()
         self.painter = PainterWidget()
         parent.add_widget(self.painter)
-        parent.add_widget(Button(text='Clear', on_press=self.clear_canvas, size=(250, 150)))
-        parent.add_widget(Button(text='Save', on_press=self.save, size=(250, 150), pos=(250, 0)))
-        parent.add_widget(Button(text='Screen', on_press=self.screen, size=(250, 150), pos=(500, 0)))
+        parent.add_widget(Button(text='Clear', on_press=self.clear_canvas, size=(100, 50)))
+        # parent.add_widget(Button(text='Save', on_press=self.save, size=(250, 150), pos=(250, 0)))
+        # parent.add_widget(Button(text='Screen', on_press=self.screen, size=(250, 150), pos=(500, 0)))
         return parent
 
     def clear_canvas(self, instance):
         self.painter.canvas.clear()
 
-    def save(self, instance):
-        self.painter.size = (Window.size[0], Window.size[1])
-        self.painter.export_to_png('image.png')
+    # def save(self, instance):
+    #     self.painter.size = (Window.size[0], Window.size[1])
+    #     self.painter.export_to_png('image.png')
 
 
-    def screen(self, instance):
-        Window.screenshot('screen.png')
-
+    # def screen(self, instance):
+    #     Window.screenshot('screen.png')
+    #
 
 if __name__ == '__main__':
     PainApp().run()
